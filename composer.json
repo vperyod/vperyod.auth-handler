@@ -1,0 +1,33 @@
+{
+    "name": "jnjxp/auth-handler",
+    "description": "PSR7 Aura\\Auth Authentication Handler",
+    "homepage":"https://github.com/jnjxp/jnjxp.auth-handler",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jake johns",
+            "email": "jake@jakejohns.net"
+        }
+    ],
+    "require": {
+        "psr/http-message": "^1.0",
+        "aura/auth": "^2.0"
+    },
+    "require-dev":{
+        "zendframework/zend-diactoros": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jnjxp\\AuthHandler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jnjxp\\AuthHandler\\":"tests/"
+        }
+    },
+    "suggest": {
+        "jnjxp/vk": "For authentication domain"
+    },
+    "minimum-stability": "dev"
+}
