@@ -1,7 +1,7 @@
 {
-    "name": "jnjxp/auth-handler",
+    "name": "vperyod/auth-handler",
     "description": "PSR7 Aura\\Auth Authentication Handler",
-    "homepage":"https://github.com/jnjxp/jnjxp.auth-handler",
+    "homepage":"https://github.com/vperyod/vperyod.auth-handler",
     "license": "MIT",
     "authors": [
         {
@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Jnjxp\\AuthHandler\\": "src/"
+            "Vperyod\\AuthHandler\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Jnjxp\\AuthHandler\\":"tests/"
+            "Vperyod\\AuthHandler\\":"tests/"
         }
     },
     "suggest": {

@@ -10,14 +10,14 @@
  * of the MIT license.  See the LICENSE file for details.
  *
  * @category  Middleware
- * @package   Jnjxp\AuthHandler
+ * @package   Vperyod\AuthHandler
  * @author    Jake Johns <jake@jakejohns.net>
  * @copyright 2016 Jake Johns
  * @license   http://jnj.mit-license.org/2016 MIT License
- * @link      https://github.com/jnjxp/jnjxp.auth-handler
+ * @link      https://github.com/vperyod/vperyod.auth-handler
  */
 
-namespace Jnjxp\AuthHandler;
+namespace Vperyod\AuthHandler;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -29,10 +29,10 @@ use Aura\Auth\Service\ResumeService as Resume;
  * AuthHandler
  *
  * @category Middleware
- * @package  Jnjxp\AuthHandler
+ * @package  Vperyod\AuthHandler
  * @author   Jake Johns <jake@jakejohns.net>
  * @license  http://jnj.mit-license.org/2016 MIT License
- * @link     https://github.com/jnjxp/jnjxp.auth-handler
+ * @link     https://github.com/vperyod/vperyod.auth-handler
  */
 class AuthHandler
 {
