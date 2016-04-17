@@ -1,9 +1,9 @@
 <?php
 // @codingStandardsIgnoreFile
 
-namespace Jnjxp\AuthHandler\Fake;
+namespace Vperyod\AuthHandler\Fake;
 
-use Jnjxp\AuthHandler\AuthRequestAwareTrait;
+use Vperyod\AuthHandler\AuthRequestAwareTrait;
 
 class FakeAuthRequestAware
 {

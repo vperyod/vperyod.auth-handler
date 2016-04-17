@@ -1,7 +1,7 @@
 <?php
 // @codingStandardsIgnoreFile
 
-namespace Jnjxp\AuthHandler;
+namespace Vperyod\AuthHandler;
 
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequestFactory;

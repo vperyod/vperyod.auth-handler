@@ -1,4 +1,4 @@
-# jnjxp.auth-handler
+# vperyod.auth-handler
 [Aura\Auth] Authentication middleware
 
 [![Latest version][ico-version]][link-packagist]
@@ -8,14 +8,14 @@
 
 ## Installation
 ```
-composer require jnjxp/auth-handler
+composer require vperyod/auth-handler
 ```
 
 ## Usage
 See [Aura\Auth] documentation.
 ```php
 // Create handler with Auth and ResumeService instance
-$handler = new Jnjxp\AuthHandler\AuthHandler($auth, $resume);
+$handler = new Vperyod\AuthHandler\AuthHandler($auth, $resume);
 
 // Optionally set the `AuthAttribute`, the name of the attribute on which to
 // store the `AuthAttribute` in the `Request`. Defaults to 'aura/auth:auth'
@@ -37,7 +37,7 @@ $auth = $request->getAttribute('auth');
 
 class MyMiddleware
 {
-    use \Jnjxp\AuthHandler\AuthRequestAwareTrait;
+    use \Vperyod\AuthHandler\AuthRequestAwareTrait;
 
     public function __invoke($request, $response, $next)
     {
@@ -53,7 +53,7 @@ class MyMiddleware
 class MyInputExtractor
 {
 
-    use \Jnjxp\AuthHandler\AuthRequestAwareTrait;
+    use \Vperyod\AuthHandler\AuthRequestAwareTrait;
 
     public funciton __invoke($request)
     {
@@ -66,12 +66,12 @@ class MyInputExtractor
 ```
 [Aura\Auth]: https://github.com/auraphp/Aura.Auth
 
-[ico-version]: https://img.shields.io/packagist/v/jnjxp/auth-handler.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/jnjxp/jnjxp.auth-handler/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/jnjxp/jnjxp.auth-handler.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/jnjxp/jnjxp.auth-handler.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/vperyod/auth-handler.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/vperyod/vperyod.auth-handler/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/vperyod/vperyod.auth-handler.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/vperyod/vperyod.auth-handler.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/jnjxp/auth-handler
-[link-travis]: https://travis-ci.org/jnjxp/jnjxp.auth-handler
-[link-scrutinizer]: https://scrutinizer-ci.com/g/jnjxp/jnjxp.auth-handler
-[link-code-quality]: https://scrutinizer-ci.com/g/jnjxp/jnjxp.auth-handler
+[link-packagist]: https://packagist.org/packages/vperyod/auth-handler
+[link-travis]: https://travis-ci.org/vperyod/vperyod.auth-handler
+[link-scrutinizer]: https://scrutinizer-ci.com/g/vperyod/vperyod.auth-handler
+[link-code-quality]: https://scrutinizer-ci.com/g/vperyod/vperyod.auth-handler
