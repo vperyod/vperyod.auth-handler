@@ -28,6 +28,5 @@
     },
     "suggest": {
         "jnjxp/vk": "For authentication domain"
-    },
-    "minimum-stability": "dev"
+    }
 }
