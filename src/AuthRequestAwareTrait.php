@@ -2,9 +2,9 @@
 /**
  * Authentication Handler
  *
- * PHP version 5
+ * PHP version 7
  *
- * Copyright (C) 2016 Jake Johns
+ * Copyright (C) 2019 Jake Johns
  *
  * This software may be modified and distributed under the terms
  * of the MIT license.  See the LICENSE file for details.
@@ -12,8 +12,8 @@
  * @category  Trait
  * @package   Vperyod\AuthHandler
  * @author    Jake Johns <jake@jakejohns.net>
- * @copyright 2016 Jake Johns
- * @license   http://jnj.mit-license.org/2016 MIT License
+ * @copyright 2019 Jake Johns
+ * @license   http://jnj.mit-license.org/2019 MIT License
  * @link      https://github.com/vperyod/vperyod.auth-handler
  */
 
@@ -33,7 +33,7 @@ use Aura\Auth\Auth;
  * @category Trait
  * @package  Vperyod\AuthHandler
  * @author   Jake Johns <jake@jakejohns.net>
- * @license  http://jnj.mit-license.org/2016 MIT License
+ * @license  http://jnj.mit-license.org/2019 MIT License
  * @link     https://github.com/vperyod/vperyod.auth-handler
  */
 trait AuthRequestAwareTrait
@@ -45,21 +45,20 @@ trait AuthRequestAwareTrait
      *
      * @access protected
      */
-    protected $authAttribute = 'aura/auth:auth';
+    protected $authAttribute = Auth::class;
 
     /**
      * Set auth attribute
      *
      * @param string $attr attribute on request where auth is stored
      *
-     * @return $this
+     * @return void
      *
      * @access public
      */
     public function setAuthAttribute($attr)
     {
         $this->authAttribute = $attr;
-        return $this;
     }
 
     /**
@@ -68,11 +67,11 @@ trait AuthRequestAwareTrait
      * @param Request $request PSR7 Request
      *
      * @return Auth
-     * @throws InvalidArgumentException if auth attroibute is not an `Auth`
+     * @throws \InvalidArgumentException if auth attribute is not an `Auth`
      *
      * @access protected
      */
-    protected function getAuth(Request $request)
+    protected function getAuth(Request $request) : Auth
     {
         $auth = $request->getAttribute($this->authAttribute);
         if (! $auth instanceof Auth) {
@@ -92,7 +91,7 @@ trait AuthRequestAwareTrait
      *
      * @access protected
      */
-    protected function getAuthStatus(Request $request)
+    protected function getAuthStatus(Request $request) : string
     {
         return $this->getAuth($request)->getStatus();
     }
@@ -106,7 +105,7 @@ trait AuthRequestAwareTrait
      *
      * @access protected
      */
-    protected function isAuthValid(Request $request)
+    protected function isAuthValid(Request $request) : bool
     {
         return $this->getAuth($request)->isValid();
     }

@@ -3,16 +3,18 @@
 
 namespace Vperyod\AuthHandler;
 
+use Aura\Auth\Auth;
+use PHPUnit\Framework\TestCase;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequestFactory;
 
-class AuthRequestTest extends \PHPUnit_Framework_TestCase
+class AuthRequestTest extends TestCase
 {
     protected $auth;
 
     public function testTriat()
     {
-        $auth = $this->getMockBuilder('Aura\Auth\Auth')
+        $auth = $this->getMockBuilder(Auth::class)
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -38,12 +40,9 @@ class AuthRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testError()
     {
-        $this->setExpectedException('InvalidArgumentException');
-
+        $this->ExpectException('InvalidArgumentException');
         $req = ServerRequestFactory::fromGlobals();
-
         $fake = new Fake\FakeAuthRequestAware;
-
         $fake->proxyGetAuth($req);
     }
 }

@@ -67,7 +67,7 @@ class MyInputExtractor
 [Aura\Auth]: https://github.com/auraphp/Aura.Auth
 
 [ico-version]: https://img.shields.io/packagist/v/vperyod/auth-handler.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/vperyod/vperyod.auth-handler/master.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/vperyod/vperyod.auth-handler/develop.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/vperyod/vperyod.auth-handler.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/vperyod/vperyod.auth-handler.svg?style=flat-square
 
