@@ -2,9 +2,9 @@
 /**
  * Authentication Handler
  *
- * PHP version 5
+ * PHP version 7
  *
- * Copyright (C) 2016 Jake Johns
+ * Copyright (C) 2019 Jake Johns
  *
  * This software may be modified and distributed under the terms
  * of the MIT license.  See the LICENSE file for details.
@@ -12,8 +12,8 @@
  * @category  Middleware
  * @package   Vperyod\AuthHandler
  * @author    Jake Johns <jake@jakejohns.net>
- * @copyright 2016 Jake Johns
- * @license   http://jnj.mit-license.org/2016 MIT License
+ * @copyright 2019 Jake Johns
+ * @license   http://jnj.mit-license.org/2019 MIT License
  * @link      https://github.com/vperyod/vperyod.auth-handler
  */
 
@@ -21,6 +21,8 @@ namespace Vperyod\AuthHandler;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface as Handler;
 
 use Aura\Auth\Auth;
 use Aura\Auth\Service\ResumeService as Resume;
@@ -31,10 +33,10 @@ use Aura\Auth\Service\ResumeService as Resume;
  * @category Middleware
  * @package  Vperyod\AuthHandler
  * @author   Jake Johns <jake@jakejohns.net>
- * @license  http://jnj.mit-license.org/2016 MIT License
+ * @license  http://jnj.mit-license.org/2019 MIT License
  * @link     https://github.com/vperyod/vperyod.auth-handler
  */
-class AuthHandler
+class AuthHandler implements MiddlewareInterface
 {
     use AuthRequestAwareTrait;
 
@@ -73,11 +75,11 @@ class AuthHandler
     /**
      * Resume
      *
-     * @return Aura\Auth\Auth
+     * @return Auth
      *
      * @access protected
      */
-    protected function resume()
+    protected function resume() : Auth
     {
         $this->resume->resume($this->auth);
         return $this->auth;
@@ -87,19 +89,18 @@ class AuthHandler
      * Resumes Authenticated Session
      *
      * @param Request  $request  PSR7 HTTP Request
-     * @param Response $response PSR7 HTTP Response
-     * @param callable $next     Next callable middleware
+     * @param Handler  $handler  Next handler 
      *
      * @return Response
      *
      * @access public
      */
-    public function __invoke(Request $request, Response $response, callable $next)
+    public function process(Request $request, Handler $handler): Response
     {
         $request = $request->withAttribute(
             $this->authAttribute,
             $this->resume()
         );
-        return $next($request, $response);
+        return $handler->handle($request);
     }
 }

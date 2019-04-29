@@ -10,11 +10,14 @@
         }
     ],
     "require": {
+        "php": ">=7.1",
+        "aura/auth": "^2.0",
         "psr/http-message": "^1.0",
-        "aura/auth": "^2.0"
+        "psr/http-server-middleware": "^1.0"
     },
     "require-dev":{
-        "zendframework/zend-diactoros": "~1.0"
+        "zendframework/zend-diactoros": "~2.0",
+        "phpunit/phpunit": "^8.1"
     },
     "autoload": {
         "psr-4": {
